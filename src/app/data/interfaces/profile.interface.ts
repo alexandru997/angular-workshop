@@ -11,7 +11,3 @@ export interface Profile {
   description: string
 }
 
-export interface LoginForm {
-  username: string | null;
-  password: string | null;
-}
