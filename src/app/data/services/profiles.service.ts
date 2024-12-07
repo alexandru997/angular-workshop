@@ -16,4 +16,8 @@ export class ProfilesService {
   getTestAccounts() {
     return this.https.get<Profile[]>(`${this.baseApiURL}account/test_accounts`)
   }
+
+  getMe(){
+    return this.https.get<Profile>(`${this.baseApiURL}account/me`)
+  }
 }
