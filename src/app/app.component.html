@@ -1,5 +1,11 @@
-<span>hello kitty</span>
+<div class="profile-card__wrapper">
 
-<app-profile-card></app-profile-card>
+@for (profile of profiles; track profile.id) {
 
-<router-outlet/>
+  <app-profile-card [profile]="profile" ></app-profile-card>
+}
+</div>
+
+
+
+
