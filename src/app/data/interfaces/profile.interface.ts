@@ -10,3 +10,8 @@ export interface Profile {
   city: string;
   description: string
 }
+
+export interface LoginForm {
+  username: string | null;
+  password: string | null;
+}
