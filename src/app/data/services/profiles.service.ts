@@ -27,11 +27,14 @@ export class ProfilesService {
       )
   }
 
+  getAccount(id:string) {
+    return this.https.get<Profile>(`${this.baseApiURL}account/${id}`)
+  }
 
-  getSubscribersShortList() {
+  getSubscribersShortList(num:number=3) {
     return this.https.get<Pageble<Profile>>(`${this.baseApiURL}account/accounts`)
       .pipe(
-        map(result => result.items.slice(0, 3)),
+        map(result => result.items.slice(0, num)),
       )
   }
 
