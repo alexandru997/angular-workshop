@@ -27,15 +27,22 @@ export class ProfilesService {
       )
   }
 
-  getAccount(id:string) {
+  getAccount(id: string) {
     return this.https.get<Profile>(`${this.baseApiURL}account/${id}`)
   }
 
-  getSubscribersShortList(num:number=3) {
+  getSubscribersShortList(num: number = 3) {
     return this.https.get<Pageble<Profile>>(`${this.baseApiURL}account/accounts`)
       .pipe(
         map(result => result.items.slice(0, num)),
       )
   }
+
+
+  patchProfile(profile: Partial<Profile>) {
+    return this.https.patch<Profile>(`${this.baseApiURL}account/me`, profile)
+
+  }
+
 
 }
