@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {SvgIconComponent} from "../svg-icon/svg-icon.component";
 import {AsyncPipe, NgForOf} from "@angular/common";
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {SubscriberCardComponent} from "./subscriber-card/subscriber-card.component";
 import {ProfilesService} from "../../data/services/profiles.service";
 import {firstValueFrom} from "rxjs";
@@ -16,7 +16,8 @@ import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
     RouterLink,
     SubscriberCardComponent,
     AsyncPipe,
-    ImgUrlPipe
+    ImgUrlPipe,
+    RouterLinkActive
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
